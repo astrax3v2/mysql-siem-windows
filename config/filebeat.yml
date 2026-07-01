@@ -1,1 +1,6 @@
-
+filebeat.inputs:
+- type: log
+  paths:
+    - C:\ProgramData\MySQL\MySQL Server 8.0\Data\*.log
+output.logstash:
+  hosts: ["SIEM_IP:5044"]
