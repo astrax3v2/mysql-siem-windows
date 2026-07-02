@@ -6,7 +6,7 @@ This document is suitable for inclusion as `docs/SOP.md` in the `mysql-siem-wind
 
 ---
 
-## Part A — Manual Logging Setup
+## Part A Manual Logging Setup
 
 ### A.1 Locate the MySQL Installation
 
@@ -147,7 +147,7 @@ Community Edition does not ship this plugin — skip this step if the client run
 
 ---
 
-## Part B — Manual Validation
+## Part B Manual Validation
 
 Perform these checks after setup, and periodically thereafter (weekly is a reasonable cadence for most environments).
 
