@@ -9,7 +9,7 @@ MySQL on Windows does not forward logs anywhere by default. This repo provides t
 - Enable MySQL's error log, general query log, slow query log, and (where available) the `audit_log` plugin
 - Write those logs to a dedicated, access-controlled directory
 - Ship them to your SIEM using Filebeat
-- Validate — before and after go-live — that logging is actually healthy and events are reaching the SIEM
+- Validate before and after go-live that logging is actually healthy and events are reaching the SIEM
 
 ## Architecture
 
