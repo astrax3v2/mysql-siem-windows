@@ -1,4 +1,4 @@
-# Manual Setup & Validation Guide — MySQL Logging for SIEM (Windows)
+# Manual Setup & Validation Guide MySQL Logging for SIEM (Windows)
 
 **Use this guide when a client's change-control or security policy does not permit running automated PowerShell scripts on production database servers.** It performs the exact same actions as `setup_mysql_logging.ps1` and `validate_logs.ps1`, but as discrete, auditable manual steps using the MySQL client, Windows GUI tools, and `cmd.exe`/`icacls` instead of PowerShell automation.
 
@@ -56,7 +56,7 @@ This document is suitable for inclusion as `docs/SOP.md` in the `mysql-siem-wind
    icacls C:\MySQLLogs /grant "NETWORK SERVICE:(OI)(CI)M"
    ```
 
-### A.4 Edit `my.ini` — Enable Error, General, and Slow Query Logs
+### A.4 Edit `my.ini` Enable Error, General, and Slow Query Logs
 
 1. Open `my.ini` in Notepad **as Administrator**.
 2. Locate the `[mysqld]` section. Add or update the following lines (if a key already exists elsewhere in the file, edit it in place rather than duplicating it):
@@ -78,7 +78,7 @@ This document is suitable for inclusion as `docs/SOP.md` in the `mysql-siem-wind
    - `general_log=1` logs **every** statement — confirm with the client that the performance/disk overhead is acceptable before enabling in production (see Notes at the end of this document).
 3. Save the file.
 
-### A.5 (Optional) Enable the Audit Log Plugin — MySQL Enterprise / Percona Server Only
+### A.5 (Optional) Enable the Audit Log Plugin MySQL Enterprise / Percona Server Only
 
 Community Edition does not ship this plugin — skip this step if the client runs MySQL Community Server (check via `SELECT VERSION();` — Community builds report `-community` or `-standard` in some editions; if unsure, check with `SHOW PLUGINS;` for `audit_log` availability first).
 
